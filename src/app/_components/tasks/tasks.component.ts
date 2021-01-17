@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @Component({
@@ -11,7 +13,7 @@ export class TaskComponent implements OnInit {
   tasks;
   selectedTask;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.apiService.getTasks().subscribe((data) => {
@@ -20,9 +22,10 @@ export class TaskComponent implements OnInit {
   }
 
   public selectTask(task) {
-    let mod = new TaskModalComponent();
-    console.log(mod);
-    mod.openLg(task);
+    this.modalService.open('task', { size: 'lg' });
+    // let mod = new TaskModalComponent().openLg();
+    // console.log(mod);
+    // mod.openLg(task);
   }
 
 }

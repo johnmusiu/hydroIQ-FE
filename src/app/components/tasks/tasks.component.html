@@ -1,0 +1,50 @@
+<div class="container" style="margin-top: 70px">
+  <table class="table table-hover table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="selectTask(task)">
+            Show details
+          </button>
+          <button class="btn btn-outline-primary mb-2 mr-2" (click)="selectTask(task)">Modal vertically centered</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <!-- <div class="card text-center" *ngIf="selectedTask">
+    <div class="card-header"># {{ selectedTask.id }}</div>
+    <div class="card-block">
+      <h4 class="card-title">{{ selectedTask.name }}</h4>
+      <p class="card-text">
+        {{ selectedTask.description }}
+      </p>
+    </div>
+  </div> -->
+</div>

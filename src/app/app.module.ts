@@ -10,7 +10,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TaskComponent } from './_components/tasks/tasks.component';
 import { NavComponent } from './_components/nav/nav.component';
 import { FooterComponent } from './_components/footer/footer.component';
-import { TaskModalComponent } from './_components/task-modal/task-modal.component';
 import { AlertComponent } from './_components/alert/alert.component';
 import { LoginComponent } from './account/login/login.component';
 import { LayoutComponent } from './account/layout/layout.component';
@@ -23,7 +22,6 @@ import { TokenInterceptor } from './_helpers/token.interceptor';
     TaskComponent,
     NavComponent,
     FooterComponent,
-    TaskModalComponent,
     AlertComponent,
     LoginComponent,
     LayoutComponent,

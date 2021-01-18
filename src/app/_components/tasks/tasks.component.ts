@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @Component({
   selector: 'app-task',
@@ -23,9 +22,6 @@ export class TaskComponent implements OnInit {
 
   public selectTask(task) {
     this.modalService.open('task', { size: 'lg' });
-    // let mod = new TaskModalComponent().openLg();
-    // console.log(mod);
-    // mod.openLg(task);
   }
 
 }

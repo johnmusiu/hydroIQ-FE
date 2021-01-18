@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TaskComponent } from './_components/tasks/tasks.component';
-import { NavComponent } from './_components/nav/nav.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { AlertComponent } from './_components/alert/alert.component';
 import { LoginComponent } from './account/login/login.component';
@@ -20,7 +19,6 @@ import { TokenInterceptor } from './_helpers/token.interceptor';
   declarations: [
     AppComponent,
     TaskComponent,
-    NavComponent,
     FooterComponent,
     AlertComponent,
     LoginComponent,

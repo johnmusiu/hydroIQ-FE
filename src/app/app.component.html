@@ -1,5 +1,36 @@
-  <app-nav></app-nav>
+<nav
+  class="container-fluid navbar navbar-expand-md navbar-light max"
+  style="background-color: aquamarine"
+>
+  <a href="#" class="navbar-brand">
+    <img src="../../../favicon.ico" height="28" alt="Logo" /> HydroIQ
+  </a>
+  <button
+    type="button"
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#navbarCollapse"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav" *ngIf="user">
+      <a href="#" class="nav-item nav-link active">Create Task</a>
+      <a href="#" class="nav-item nav-link">Create User</a>
+    </div>
+    <div class="navbar-nav ml-auto" *ngIf="!user">
+      <a href="/account/login" class="nav-item nav-link">Login</a>
+    </div>
+    <div class="navbar-nav ml-auto" *ngIf="user">
+      <a href="/account/login" (click)="logout()" class="nav-item nav-link"
+        >Logout</a
+      >
+    </div>
+  </div>
+</nav>
+<div class="container">
   <app-alert></app-alert>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
-
+</div>

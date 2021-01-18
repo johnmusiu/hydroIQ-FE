@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('onsubmit login');
     this.submitted = true;
 
     // reset alerts on submit
@@ -55,7 +54,13 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          this.router.navigate([this.returnUrl]);
+          if (data.error) {
+            console.log(data);
+            this.alertService.error(data.error);
+            this.loading = false;
+          }else{
+            this.router.navigate([this.returnUrl]);
+          }
         },
         (error) => {
           this.alertService.error(error);

@@ -5,6 +5,7 @@
         <th>#</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Assigned To</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -13,8 +14,8 @@
         <td>{{ task.id }}</td>
         <td>{{ task.name }}</td>
         <td>{{ task.description }}</td>
+        <td>{{ task.user !== null ? task.user.name : ''}}</td>
         <td>
-          <!-- Button trigger modal -->
           <a
             type="button"
             class="btn btn-primary"
@@ -39,7 +40,6 @@
               </svg>
             </span>
           </a>
-          <!-- Modal -->
           <div
             class="modal fade"
             id="{{ 'modal' + task.id }}"

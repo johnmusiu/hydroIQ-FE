@@ -14,6 +14,8 @@ import { LoginComponent } from './account/login/login.component';
 import { LayoutComponent } from './account/layout/layout.component';
 import { ErrorInterceptor } from './_helpers/error.inceptor';
 import { TokenInterceptor } from './_helpers/token.interceptor';
+import { CreateTaskComponent } from './_components/create-task/create-task.component';
+import { CreateUserComponent } from './_components/create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { TokenInterceptor } from './_helpers/token.interceptor';
     AlertComponent,
     LoginComponent,
     LayoutComponent,
+    CreateTaskComponent,
+    CreateUserComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, ReactiveFormsModule],
   providers: [

@@ -20,10 +20,12 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((err) => {
+        console.log('err: ' + JSON.stringify(err));
         if (err.status === 401) {
           this.accountService.logout();
         }
-        const error = err.error.message || err.statusText;
+
+        const error = JSON.stringify(err.error) || err.statusText;
         return throwError(error);
       })
     );
